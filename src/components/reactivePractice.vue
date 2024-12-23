@@ -47,7 +47,8 @@ const increment = () => {
 </script>
 
 <template>
-  <h1><em>nameRef:</em> {{ nameRef }}</h1>
+  <h2>リアクティブ:ref reactiveの勉強</h2>
+  <div><em>nameRef:</em> {{ nameRef }}</div>
   <div><em>priceRef:</em> {{ priceRef }}</div>
   <div><em>profileRef.age:</em> {{ profileRef.age }}</div>
   <div><em>birthdayReactive.year:</em> {{ birthdayReactive.year }}</div>
@@ -59,11 +60,7 @@ const increment = () => {
 </template>
 
 <style scoped>
-h1 {
+h2 {
   color: red;
-}
-
-em {
-  font-weight: bold;
 }
 </style>

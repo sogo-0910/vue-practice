@@ -1,23 +1,55 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import type { Ref } from 'vue'
 
-const message: Ref<string> = ref('<h1>Directive</h1>')
+// v-html
+const vHtmlMessage: Ref<string> = ref('<h2>ディレクティブ:v-html・v-bind・v-onの勉強</h2>')
+
+// v-bind
 const vBindURL: Ref<string> = ref('https://www.google.com/')
 const href: Ref<string> = ref('https://www.google.com/')
 const id: Ref<string> = ref('anchor')
+
+// v-on
+const eventName = 'click'
+const count: Ref<number> = ref(0)
+const handleClick = (event: MouseEvent, times: number) => {
+  count.value = event.clientX * times
+
+  if (count.value > 5) {
+    const target = event.currentTarget as HTMLElement
+    target.classList.add('bg-red')
+  }
+}
 </script>
 
 <template>
   <!-- Start: v-html -->
-  <div v-html="message"></div>
+  <div v-html="vHtmlMessage"></div>
   <!-- End: v-html -->
 
   <!-- Start: v-bind -->
   <a :href="vBindURL">v-bind link</a>
   <a :id :href>v-bind link（省略）{{ id }}</a>
-  <button type="submit" :disabled="true">Button</button>
   <!-- End: v-bind -->
+
+  <!-- Start: v-on -->
+  <div>{{ count }}</div>
+  <button
+    type="button"
+    :disabled="count > 350"
+    @[eventName].prevent.stop="(event: MouseEvent) => handleClick(event, 5)"
+  >
+    Button
+  </button>
+  <a :href="vBindURL" @[eventName].prevent.stop="(event: MouseEvent) => handleClick(event, 5)"
+    >v-on prevent link</a
+  >
+  <!-- End: v-on -->
 </template>
 
-<style scoped></style>
+<style scoped>
+.bg-red {
+  background-color: red;
+}
+</style>

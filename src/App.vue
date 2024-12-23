@@ -1,13 +1,17 @@
 <script setup lang="ts">
 import reactivePractice from './components/reactivePractice.vue'
 import directivePractice from './components/directivePractice.vue'
+import DirectivePracticeType2 from './components/directivePracticeType2.vue'
 </script>
 
 <template>
+  <h1>Vue Practice</h1>
   <div className="div">
     <reactivePractice />
     <hr />
     <directivePractice />
+    <hr />
+    <DirectivePracticeType2 />
     <hr />
   </div>
 </template>
