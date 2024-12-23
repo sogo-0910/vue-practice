@@ -22,7 +22,7 @@
 </script>
 
 <template>
-  <h2>ディレクティブ:v-model・computed・watcherの勉強</h2>
+  <h2>ディレクティブ:v-model・computedの勉強</h2>
 
   <h3>v-model</h3>
 
