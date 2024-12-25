@@ -1,8 +1,11 @@
 <script setup lang="ts">
   import reactivePractice from './components/reactivePractice.vue'
   import directivePractice from './components/directivePractice.vue'
-  import DirectivePracticeType2 from './components/directivePracticeType2.vue'
-  import DirectivePracticeType3 from './components/directivePracticeType3.vue'
+  import directivePracticeType2 from './components/directivePracticeType2.vue'
+  import directivePracticeType3 from './components/directivePracticeType3.vue'
+  import vIfPractice from './components/vIfPractice.vue'
+  import vShowPractice from './components/vShowPractice.vue'
+  import vForPractice from './components/vForPractice.vue'
 </script>
 
 <template>
@@ -12,9 +15,15 @@
     <hr />
     <directivePractice />
     <hr />
-    <DirectivePracticeType2 />
+    <directivePracticeType2 />
     <hr />
-    <DirectivePracticeType3 />
+    <directivePracticeType3 />
+    <hr />
+    <vIfPractice />
+    <hr />
+    <vShowPractice />
+    <hr />
+    <vForPractice />
   </div>
 </template>
 

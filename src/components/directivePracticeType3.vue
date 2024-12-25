@@ -46,5 +46,3 @@
   <button type="button" @click="count3.a++">count3++</button>
   <!-- End: watchEffect -->
 </template>
-
-<style scoped></style>

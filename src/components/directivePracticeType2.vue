@@ -41,5 +41,3 @@
   <button type="button" @click="resetScore">resetScore</button>
   <!-- End: computed -->
 </template>
-
-<style scoped></style>
