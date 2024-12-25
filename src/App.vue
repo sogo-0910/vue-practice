@@ -1,7 +1,16 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import HeaderLayout from './layout/HeaderLayout.vue'
+  import MainLayout from './layout/MainLayout.vue'
+  import FooterLayout from './layout/FooterLayout.vue'
+  import HeadingLevel1 from './components/HeadingLevel1.vue'
+</script>
 
 <template>
-  <h1>Vue Practice</h1>
+  <HeaderLayout />
+  <MainLayout>
+    <HeadingLevel1>What are you eating today?</HeadingLevel1>
+  </MainLayout>
+  <FooterLayout />
 </template>
 
 <style scoped>

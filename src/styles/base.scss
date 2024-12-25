@@ -1,0 +1,87 @@
+/* color palette from <https://github.com/vuejs/theme> */
+:root {
+  // MARGIN
+  --MARGIN-SECTION: 40px;
+
+  // FONT
+  --FONT-GOTHIC: '游ゴシック', 'Yu Gothic', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', sans-serif;
+
+  // FONT-WEIGHT
+  --FONT-WEIGHT-NORMAL: 400;
+  --FONT-WEIGHT-BOLD: 700;
+
+  // FOREGROUND
+  --COLOR-FOREGROUND-LIGHT: #fff;
+  --COLOR-FOREGROUND-DARK: #333;
+
+  // BACKGROUND
+  --COLOR-BACKGROUND-LIGHT: #fff;
+  --COLOR-BACKGROUND-DARK: #333;
+  --COLOR-BACKGROUND-ORANGE: #ffdcb9;
+
+  // ROLE DANGER
+  --COLOR_ROLE_DANGER_DARK: #c00;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  color: var(--COLOR-FOREGROUND-DARK);
+  background: var(--COLOR-BACKGROUND-LIGHT);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.4;
+  font-family: var(--FONT-GOTHIC);
+  font-size: 1.6rem;
+  overflow-x: hidden;
+  font-weight: var(--FONT-WEIGHT-NORMAL);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+em,
+b,
+strong {
+  font-weight: var(--FONT-WEIGHT-BOLD);
+}
+
+strong {
+  color: var(--COLOR_ROLE_DANGER_DARK);
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: var(--COLOR-FOREGROUND-DARK);
+}
+
+button {
+  padding: 0;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  appearance: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
