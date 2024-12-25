@@ -2,13 +2,18 @@
   import { ref } from 'vue'
   import type { Ref } from 'vue'
   import DefinePropsPractice from './components/DefinePropsPractice.vue'
+  import EmitPractice from './components/emitPractice.vue'
   const totalCount: Ref<number> = ref(0)
+  const handleResetTotalCount = (value: number) => {
+    totalCount.value = value
+  }
 </script>
 
 <template>
   <h1>Vue Practice</h1>
   <DefinePropsPractice :total-count="totalCount" />
   <button type="button" @click="totalCount++">+1</button>
+  <EmitPractice @reset-count="handleResetTotalCount" />
 </template>
 
 <style scoped>
