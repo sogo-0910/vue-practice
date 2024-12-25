@@ -1,0 +1,18 @@
+export const foodData = [
+  { name: '寿司', emoji: '🍣' },
+  { name: 'ハンバーガー', emoji: '🍔' },
+  { name: '焼肉', emoji: '🥩' },
+  { name: '麺系', emoji: '🍜' },
+  { name: 'たこ焼き', emoji: '🐙' },
+  { name: 'おでん', emoji: '🍢' },
+  { name: '丼系', emoji: '🍚' },
+  { name: 'オムライス', emoji: '🥚' },
+  { name: 'イタリアン', emoji: '🇮🇹' },
+  { name: '中華料理', emoji: '🇨🇳' },
+  { name: 'とんかつ', emoji: '🐖' },
+  { name: '韓国料理', emoji: '🇰🇷' },
+  { name: 'カレー', emoji: '🍛' },
+  { name: '鍋系', emoji: '🍲' },
+  { name: '居酒屋', emoji: '🏮' },
+  { name: 'ファミレス', emoji: '🍽️' },
+]

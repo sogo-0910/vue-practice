@@ -1,7 +1,10 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
   // MARGIN
-  --MARGIN-SECTION: 40px;
+  --MARGIN-SECTION: 64px;
+  --MARGIN-COMPONENTS-L: 40px;
+  --MARGIN-COMPONENTS-M: 24px;
+  --MARGIN-COMPONENTS-S: 8px;
 
   // FONT
   --FONT-GOTHIC: '游ゴシック', 'Yu Gothic', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', sans-serif;
@@ -9,6 +12,9 @@
   // FONT-WEIGHT
   --FONT-WEIGHT-NORMAL: 400;
   --FONT-WEIGHT-BOLD: 700;
+
+  // BOX-SHADOW
+  --BOX-SHADOW: 5px 5px 6px #7d7d7d33;
 
   // FOREGROUND
   --COLOR-FOREGROUND-LIGHT: #fff;
