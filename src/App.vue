@@ -1,6 +1,5 @@
 <script setup lang="ts">
-  import { ref } from 'vue'
-  import type { Ref } from 'vue'
+  import { useFoodSelector } from './composables/useFoodSelector'
   import HeaderLayout from './layout/HeaderLayout.vue'
   import MainLayout from './layout/MainLayout.vue'
   import FooterLayout from './layout/FooterLayout.vue'
@@ -10,16 +9,8 @@
   import { foodData } from './data/foodData'
   import TextBase from './components/TextBase.vue'
 
-  const foodDataRef: Ref<{ name: string; emoji: string }[]> = ref(foodData)
-  const selectedFoodIndex: Ref<number> = ref(0)
-  const NewFoodIndex: Ref<number> = ref(1)
-
-  const handleClickSelectedFood = (index: number) => {
-    if (index >= 0 && index < foodDataRef.value.length) {
-      selectedFoodIndex.value = index
-      NewFoodIndex.value++
-    }
-  }
+  const { foodDataRef, selectedFoodIndex, newFoodIndex, handleClickSelectedFood } =
+    useFoodSelector(foodData)
 </script>
 
 <template>
@@ -27,25 +18,25 @@
   <MainLayout>
     <HeadingLevel1>What are you having for dinner?</HeadingLevel1>
 
-    <TextBase v-show="NewFoodIndex >= foodDataRef.length"
-      >The dinner you chose is {{ foodDataRef[selectedFoodIndex].name }}</TextBase
-    >
+    <TextBase v-show="newFoodIndex >= foodDataRef.length">
+      The dinner you chose is {{ foodDataRef[selectedFoodIndex].name }}
+    </TextBase>
 
     <CardLayout>
       <CardItem
-        :is-button="NewFoodIndex < foodDataRef.length"
+        :is-button="newFoodIndex < foodDataRef.length"
         :name="foodDataRef[selectedFoodIndex].name"
         :emoji="foodDataRef[selectedFoodIndex].emoji"
-        :is-centering="NewFoodIndex >= foodDataRef.length"
+        :is-centering="newFoodIndex >= foodDataRef.length"
         @click="handleClickSelectedFood(selectedFoodIndex)"
       />
 
       <CardItem
-        v-if="NewFoodIndex < foodDataRef.length"
+        v-if="newFoodIndex < foodDataRef.length"
         :is-button="true"
-        :name="foodDataRef[NewFoodIndex].name"
-        :emoji="foodDataRef[NewFoodIndex].emoji"
-        @click="handleClickSelectedFood(NewFoodIndex)"
+        :name="foodDataRef[newFoodIndex].name"
+        :emoji="foodDataRef[newFoodIndex].emoji"
+        @click="handleClickSelectedFood(newFoodIndex)"
       />
     </CardLayout>
   </MainLayout>
