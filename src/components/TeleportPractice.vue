@@ -6,6 +6,7 @@
 </script>
 
 <template>
+  <h2>Teleport Practice</h2>
   <button type="button" @click="dialogOpen = true">open</button>
   <Teleport to="body">
     <dialog :open="dialogOpen">

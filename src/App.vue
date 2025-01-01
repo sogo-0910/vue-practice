@@ -24,6 +24,7 @@
   const currentComp: ShallowRef<ComponentType> = shallowRef(CompA)
 
   import TeleportPractice from './components/TeleportPractice.vue'
+  import FormPractice from './components/FormPractice.vue'
 </script>
 
 <template>
@@ -62,6 +63,8 @@
   </KeepAlive>
   <hr />
   <TeleportPractice />
+  <hr />
+  <FormPractice />
 </template>
 
 <style scoped>
