@@ -9,7 +9,7 @@
   })
 
   onDeactivated(() => {
-    count.value = 10
+    console.log('onDeactivated')
   })
 </script>
 
