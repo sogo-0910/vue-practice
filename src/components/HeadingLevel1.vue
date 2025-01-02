@@ -20,6 +20,20 @@
     flex-direction: column;
     gap: 4px;
     text-align: center;
+    position: relative;
+    padding-bottom: 20px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin-inline: auto;
+      width: 120px;
+      height: 4px;
+      background-color: var(--COLOR-PRIMARY);
+    }
   }
 
   .mainTitle {

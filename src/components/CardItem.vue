@@ -37,7 +37,8 @@
   .cardItem {
     width: 100%;
     border-radius: 8px;
-    background-color: var(--COLOR-BACKGROUND-ORANGE);
+    background-color: var(--COLOR-BACKGROUND-LIGHT);
+    border: 2px solid var(--COLOR-PRIMARY);
     padding: 40px 8px;
     display: flex;
     flex-direction: column;
