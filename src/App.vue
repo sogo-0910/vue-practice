@@ -25,6 +25,7 @@
 
   import TeleportPractice from './components/TeleportPractice.vue'
   import FormPractice from './components/FormPractice.vue'
+  import TransitionPractice from './components/TransitionPractice.vue'
 </script>
 
 <template>
@@ -65,6 +66,8 @@
   <TeleportPractice />
   <hr />
   <FormPractice />
+  <hr />
+  <TransitionPractice />
 </template>
 
 <style scoped>
