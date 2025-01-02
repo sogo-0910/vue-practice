@@ -26,6 +26,7 @@
   import TeleportPractice from './components/TeleportPractice.vue'
   import FormPractice from './components/FormPractice.vue'
   import TransitionPractice from './components/TransitionPractice.vue'
+  import TransitonGroupPractice from './components/TransitonGroupPractice.vue'
 </script>
 
 <template>
@@ -68,6 +69,10 @@
   <FormPractice />
   <hr />
   <TransitionPractice />
+  <hr />
+  <TransitonGroupPractice />
+  <hr />
+  <p>text</p>
 </template>
 
 <style scoped>
