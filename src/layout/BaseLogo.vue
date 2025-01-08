@@ -1,5 +1,5 @@
 <template>
-  <RouterLink to="/" class="logo">LOGO</RouterLink>
+  <RouterLink :to="{ name: 'home' }" class="logo">LOGO</RouterLink>
 </template>
 
 <style scoped>

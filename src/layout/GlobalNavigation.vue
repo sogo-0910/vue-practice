@@ -2,13 +2,13 @@
   <nav class="globalNavigation">
     <ul class="list">
       <li class="item">
-        <RouterLink class="link" to="/">Home</RouterLink>
+        <RouterLink class="link" :to="{ name: 'home' }">Home</RouterLink>
       </li>
       <li class="item">
-        <RouterLink class="link" to="/food-select">Food select</RouterLink>
+        <RouterLink class="link" :to="{ name: 'foodSelect' }">Food select</RouterLink>
       </li>
       <li class="item">
-        <RouterLink class="link" to="/about">About</RouterLink>
+        <RouterLink class="link" :to="{ name: 'about' }">About</RouterLink>
       </li>
     </ul>
   </nav>
