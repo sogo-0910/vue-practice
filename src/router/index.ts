@@ -11,6 +11,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
+      // alias: ['/alias', '/array'], // パラメーターは付与できない
       component: HomeView,
     },
     {
@@ -35,6 +36,7 @@ const router = createRouter({
     {
       path: '/:catchAll(.*)*',
       name: 'notFound',
+      // redirect: { name: 'home' },
       component: NotFoundView,
     },
   ],
