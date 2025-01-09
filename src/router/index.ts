@@ -60,6 +60,32 @@ const router = createRouter({
       props: true,
     },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    console.log(to, from, savedPosition)
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        const header = document.querySelector('.header')
+        const headerHeight = header ? header.clientHeight : 0
+
+        if (savedPosition) {
+          return resolve(savedPosition)
+        }
+
+        if (to.hash) {
+          return resolve({
+            el: to.hash,
+            top: headerHeight,
+            behavior: 'smooth',
+          })
+        }
+
+        return resolve({
+          top: 0,
+          behavior: 'smooth',
+        })
+      }, 600)
+    })
+  },
 })
 
 export default router
