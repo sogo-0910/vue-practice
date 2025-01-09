@@ -4,6 +4,9 @@ import AboutView from '@/views/AboutView.vue'
 import FoodSelectView from '@/views/FoodSelectView.vue'
 import BlogView from '@/views/BlogView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
+import ProfileView from '@/views/ProfileView.vue'
+import PostsView from '@/views/profile/PostsView.vue'
+import LikesView from '@/views/profile/LikesView .vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -20,6 +23,22 @@ const router = createRouter({
       component: AboutView,
     },
     {
+      path: '/:id',
+      component: ProfileView,
+      children: [
+        {
+          path: '',
+          name: 'posts',
+          component: PostsView,
+        },
+        {
+          path: 'likes',
+          name: 'likes',
+          component: LikesView,
+        },
+      ],
+    },
+    {
       path: '/food-select',
       name: 'foodSelect',
       component: FoodSelectView,
@@ -29,7 +48,7 @@ const router = createRouter({
       // +にすると/区切りで配列にしてくれる
       // ?にするとリアクティブな値がなくても表示される
       // *にすると+と?の２つの指定ができる
-      path: '/blog/id-:id*',
+      path: '/blog/id-:id?',
       name: 'blog',
       component: BlogView,
     },
@@ -38,6 +57,7 @@ const router = createRouter({
       name: 'notFound',
       // redirect: { name: 'home' },
       component: NotFoundView,
+      props: true,
     },
   ],
 })

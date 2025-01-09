@@ -22,6 +22,7 @@
     position: sticky;
     top: 0;
     left: 0;
+    z-index: 100;
 
     > *:first-child {
       margin-top: 0;

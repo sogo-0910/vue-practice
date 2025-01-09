@@ -1,12 +1,6 @@
-<script setup lang="ts">
-  import SectionLayout from './SectionLayout.vue'
-</script>
-
 <template>
   <main class="main">
-    <SectionLayout>
-      <slot></slot>
-    </SectionLayout>
+    <slot></slot>
   </main>
 </template>
 
@@ -17,7 +11,7 @@
     height: 100%;
 
     > *:first-child {
-      margin-top: 0;
+      margin-top: 0 !important;
     }
   }
 </style>

@@ -10,6 +10,14 @@
       <li class="item">
         <RouterLink class="link" :to="{ name: 'about' }">About</RouterLink>
       </li>
+      <li class="item">
+        <RouterLink class="link" :to="{ name: 'posts', params: { id: 'name' } }"
+          >Profile</RouterLink
+        >
+      </li>
+      <li class="item">
+        <RouterLink class="link" :to="{ name: 'blog', params: { id: 1 } }">Blog</RouterLink>
+      </li>
     </ul>
   </nav>
 </template>
