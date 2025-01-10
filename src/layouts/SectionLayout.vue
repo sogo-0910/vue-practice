@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
   .section {
     display: grid;
     gap: 0 clamp(1.6rem, calc(-2.667rem + 5.556vw), 4rem);

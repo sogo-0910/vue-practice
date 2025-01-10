@@ -2,7 +2,7 @@
   <RouterLink :to="{ name: 'home' }" class="logo">LOGO</RouterLink>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
   .logo {
     font-weight: bold;
     transition: color var(--TRANSITION);
@@ -11,10 +11,10 @@
     display: flex;
     justify-content: center;
 
-    &:hover,
-    &:active,
-    &:focus {
-      color: var(--COLOR-PRIMARY);
+    @include mixin.media(hover) {
+      &:hover {
+        color: var(--COLOR-PRIMARY);
+      }
     }
   }
 </style>

@@ -23,7 +23,7 @@
   </component>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
   .cardItem {
     width: 100%;
     border-radius: 8px;
@@ -39,7 +39,7 @@
   }
 
   .cardItem--center {
-    @media (min-width: 768px) {
+    @include mixin.media(pc) {
       max-width: 400px;
     }
   }

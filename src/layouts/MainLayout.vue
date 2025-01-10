@@ -4,14 +4,12 @@
   </main>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
   .main {
+    @extend %reset-margin;
+
     grid-area: content;
     margin: var(--MARGIN-SECTION) 0;
     height: 100%;
-
-    > *:first-child {
-      margin-top: 0 !important;
-    }
   }
 </style>

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-  import { defineProps } from 'vue'
-
   interface Props {
     tag?: 'div' | 'ul'
   }
@@ -14,7 +12,7 @@
   </component>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
   .buttonLayout {
     margin-top: var(--MARGIN-COMPONENTS-L);
     display: flex;

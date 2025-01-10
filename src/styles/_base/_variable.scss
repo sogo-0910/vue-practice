@@ -1,0 +1,34 @@
+:root {
+  // MARGIN
+  --MARGIN-SECTION: 64px;
+  --MARGIN-COMPONENTS-L: 40px;
+  --MARGIN-COMPONENTS-M: 24px;
+  --MARGIN-COMPONENTS-S: 8px;
+
+  // FONT
+  --FONT-GOTHIC: '游ゴシック', 'Yu Gothic', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', sans-serif;
+
+  // FONT-WEIGHT
+  --FONT-WEIGHT-NORMAL: 400;
+  --FONT-WEIGHT-BOLD: 700;
+
+  // BOX-SHADOW
+  --BOX-SHADOW: 5px 5px 6px #7d7d7d33;
+
+  // PRIMARY
+  --COLOR-PRIMARY: #3dd68c;
+
+  // FOREGROUND
+  --COLOR-FOREGROUND-LIGHT: #fff;
+  --COLOR-FOREGROUND-DARK: #333;
+
+  // BACKGROUND
+  --COLOR-BACKGROUND-LIGHT: #fff;
+  --COLOR-BACKGROUND-DARK: #333;
+
+  // ROLE DANGER
+  --COLOR_ROLE_DANGER_DARK: #c00;
+
+  // TRANSITION
+  --TRANSITION: .3s cubic-bezier(.25,.8,.25,1);
+}

@@ -16,7 +16,7 @@
   <FooterLayout />
 </template>
 
-<style scoped>
+<style scoped lang="scss">
   .fade-enter-from,
   .fade-leave-to {
     opacity: 0;

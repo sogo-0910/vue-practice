@@ -12,7 +12,7 @@
   </h1>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
   .title {
     display: flex;
     flex-direction: column;

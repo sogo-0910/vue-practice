@@ -15,18 +15,15 @@
   </header>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
   .header {
+    @extend %reset-margin;
     grid-area: header;
     padding: 16px 0;
     position: sticky;
     top: 0;
     left: 0;
     z-index: 100;
-
-    > *:first-child {
-      margin-top: 0;
-    }
   }
 
   .flex {

@@ -22,7 +22,7 @@
   </nav>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
   .globalNavigation {
     background-color: var(--COLOR-FOREGROUND-LIGHT);
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
@@ -40,10 +40,10 @@
     font-weight: bold;
     transition: color var(--TRANSITION);
 
-    &:hover,
-    &:active,
-    &:focus {
-      color: var(--COLOR-PRIMARY);
+    @include mixin.media(hover) {
+      &:hover {
+        color: var(--COLOR-PRIMARY);
+      }
     }
   }
 </style>

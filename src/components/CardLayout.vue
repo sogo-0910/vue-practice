@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
   .cardLayout {
     margin-top: var(--MARGIN-COMPONENTS-L);
     margin-left: auto;
@@ -15,7 +15,7 @@
     gap: clamp(1.6rem, calc(-2.667rem + 5.556vw), 4rem);
     max-width: 800px;
 
-    @media (min-width: 768px) {
+    @include mixin.media(pc) {
       justify-content: center;
     }
   }

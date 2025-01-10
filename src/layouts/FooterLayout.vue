@@ -11,13 +11,12 @@
   </footer>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+  @use '@/styles/_common/extend/' as *;
+
   .footer {
+    @extend %reset-margin;
     grid-area: 'footer';
     padding: 16px 0;
-
-    > *:first-child {
-      margin-top: 0;
-    }
   }
 </style>

@@ -2,7 +2,7 @@
   <p class="textBase"><slot></slot></p>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
   .textBase {
     font-size: 2.4rem;
     text-align: center;

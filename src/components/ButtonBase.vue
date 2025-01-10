@@ -1,6 +1,4 @@
 <script setup lang="ts">
-  import { defineProps } from 'vue'
-
   interface Props {
     type?: 'button' | 'link' | 'router-link'
     to?: string | Record<string, unknown> | null
@@ -21,7 +19,7 @@
   </component>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
   .buttonBase {
     width: 100%;
     color: var(--COLOR-PRIMARY);
@@ -35,11 +33,11 @@
       color var(--TRANSITION),
       background-color var(--TRANSITION);
 
-    &:hover,
-    &:active,
-    &:focus {
-      color: var(--COLOR-FOREGROUND-LIGHT);
-      background-color: var(--COLOR-PRIMARY);
+    @include mixin.media(hover) {
+      &:hover {
+        color: var(--COLOR-FOREGROUND-LIGHT);
+        background-color: var(--COLOR-PRIMARY);
+      }
     }
   }
 </style>
