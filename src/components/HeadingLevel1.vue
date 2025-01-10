@@ -1,10 +1,8 @@
 <script setup lang="ts">
-  const { subtitle } = defineProps({
-    subtitle: {
-      type: [String],
-      default: undefined,
-    },
-  })
+  interface Props {
+    subtitle?: string
+  }
+  const { subtitle } = defineProps<Props>()
 </script>
 
 <template>

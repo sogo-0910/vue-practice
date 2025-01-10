@@ -1,13 +1,11 @@
 <script setup lang="ts">
   import { defineProps } from 'vue'
 
-  defineProps({
-    tag: {
-      type: String,
-      default: 'div',
-      validator: (value: string) => ['div', 'li'].includes(value),
-    },
-  })
+  interface Props {
+    tag?: 'div' | 'li'
+  }
+
+  const { tag = 'div' } = defineProps<Props>()
 </script>
 
 <template>

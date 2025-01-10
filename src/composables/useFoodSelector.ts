@@ -1,5 +1,4 @@
 import { ref } from 'vue'
-import type { Ref } from 'vue'
 
 export interface FoodItem {
   name: string
@@ -7,9 +6,9 @@ export interface FoodItem {
 }
 
 export const useFoodSelector = (initialFoodData: FoodItem[]) => {
-  const foodDataRef: Ref<FoodItem[]> = ref(initialFoodData)
-  const selectedFoodIndex: Ref<number> = ref(0)
-  const newFoodIndex: Ref<number> = ref(1)
+  const foodDataRef = ref(initialFoodData)
+  const selectedFoodIndex = ref(0)
+  const newFoodIndex = ref(1)
 
   const handleClickSelectedFood = (index: number) => {
     if (index >= 0 && index < foodDataRef.value.length) {

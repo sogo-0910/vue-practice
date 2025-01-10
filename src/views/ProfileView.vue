@@ -1,6 +1,6 @@
 <script setup lang="ts">
-  import HeadingLevel1 from './../components/HeadingLevel1.vue'
-  import SectionLayout from '@/layout/SectionLayout.vue'
+  import HeadingLevel1 from '@/components/HeadingLevel1.vue'
+  import SectionLayout from '@/layouts/SectionLayout.vue'
   import ButtonLayout from '@/components/ButtonLayout.vue'
   import ButtonLayoutItem from '@/components/ButtonLayoutItem.vue'
   import ButtonBase from '@/components/ButtonBase.vue'

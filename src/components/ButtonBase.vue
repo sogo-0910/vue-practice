@@ -1,21 +1,13 @@
 <script setup lang="ts">
   import { defineProps } from 'vue'
 
-  defineProps({
-    type: {
-      type: String,
-      default: 'button',
-      validator: (value: string) => ['button', 'link', 'router-link'].includes(value),
-    },
-    to: {
-      type: [String, Object],
-      default: null,
-    },
-    onClick: {
-      type: Function,
-      default: null,
-    },
-  })
+  interface Props {
+    type?: 'button' | 'link' | 'router-link'
+    to?: string | Record<string, unknown> | null
+    onClick?: () => void | null
+  }
+
+  const { type = 'button', to = null, onClick = null } = defineProps<Props>()
 </script>
 
 <template>

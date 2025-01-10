@@ -1,22 +1,12 @@
 <script setup lang="ts">
-  const { isButton, name, emoji, isCentering } = defineProps({
-    isButton: {
-      type: Boolean,
-      default: false,
-    },
-    name: {
-      type: String,
-      required: true,
-    },
-    emoji: {
-      type: String,
-      required: true,
-    },
-    isCentering: {
-      type: Boolean,
-      default: false,
-    },
-  })
+  interface Props {
+    isButton?: boolean
+    name: string
+    emoji: string
+    isCentering?: boolean
+  }
+
+  const { isButton, name, emoji, isCentering } = defineProps<Props>()
 </script>
 
 <template>

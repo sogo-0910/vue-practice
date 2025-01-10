@@ -1,14 +1,23 @@
 <script setup lang="ts">
   import { useRoute, useRouter } from 'vue-router'
-  import SectionLayout from '@/layout/SectionLayout.vue'
-  import HeadingLevel1 from './../components/HeadingLevel1.vue'
+  import SectionLayout from '@/layouts/SectionLayout.vue'
+  import HeadingLevel1 from '@/components/HeadingLevel1.vue'
   import TextBase from '@/components/TextBase.vue'
   import ButtonLayout from '@/components/ButtonLayout.vue'
   import ButtonLayoutItem from '@/components/ButtonLayoutItem.vue'
   import ButtonBase from '@/components/ButtonBase.vue'
+  import CounterComp from '@/components/CounterComp.vue'
 
   const route = useRoute()
   const router = useRouter()
+
+  // onBeforeRouteUpdate((to, from) => { // パラメーターが変更された時に実行する
+  //   console.log('onBeforeRouteUpdate')
+  // })
+
+  // onBeforeRouteLeave((to, from) => { // ページを離れる前に実行される
+  //   return window.confirm('本当にこのページ離れる？')
+  // })
 </script>
 
 <template>
@@ -27,5 +36,6 @@
         </ButtonBase>
       </ButtonLayoutItem>
     </ButtonLayout>
+    <CounterComp />
   </SectionLayout>
 </template>

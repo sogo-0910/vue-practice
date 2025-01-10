@@ -1,11 +1,11 @@
 <script setup lang="ts">
-  import { useFoodSelector } from './../composables/useFoodSelector'
-  import SectionLayout from '@/layout/SectionLayout.vue'
-  import HeadingLevel1 from './../components/HeadingLevel1.vue'
-  import CardLayout from './../components/CardLayout.vue'
-  import CardItem from './../components/CardItem.vue'
-  import { foodData } from './../data/foodData'
-  import TextBase from './../components/TextBase.vue'
+  import { useFoodSelector } from '@/composables/useFoodSelector'
+  import SectionLayout from '@/layouts/SectionLayout.vue'
+  import HeadingLevel1 from '@/components/HeadingLevel1.vue'
+  import CardLayout from '@/components/CardLayout.vue'
+  import CardItem from '@/components/CardItem.vue'
+  import { foodData } from '@/data/foodData'
+  import TextBase from '@/components/TextBase.vue'
 
   const { foodDataRef, selectedFoodIndex, newFoodIndex, handleClickSelectedFood } =
     useFoodSelector(foodData)

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-  import SectionLayout from './SectionLayout.vue'
-  import BaseLogo from './BaseLogo.vue'
+  import SectionLayout from '@/layouts/SectionLayout.vue'
+  import BaseLogo from '@/layouts/BaseLogo.vue'
 </script>
 
 <template>

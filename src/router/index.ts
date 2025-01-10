@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '@/views/HomeView.vue'
-import AboutView from '@/views/AboutView.vue'
-import FoodSelectView from '@/views/FoodSelectView.vue'
-import BlogView from '@/views/BlogView.vue'
-import NotFoundView from '@/views/NotFoundView.vue'
-import ProfileView from '@/views/ProfileView.vue'
-import PostsView from '@/views/profile/PostsView.vue'
-import LikesView from '@/views/profile/LikesView .vue'
+const HomeView = () => import('@/views/HomeView.vue')
+const AboutView = () => import('@/views/AboutView.vue')
+const FoodSelectView = () => import('@/views/FoodSelectView.vue')
+const BlogView = () => import('@/views/BlogView.vue')
+const NotFoundView = () => import('@/views/NotFoundView.vue')
+const ProfileView = () => import('@/views/ProfileView.vue')
+const PostsView = () => import('@/views/profile/PostsView.vue')
+const LikesView = () => import('@/views/profile/LikesView .vue')
 
 const router = createRouter({
   history: createWebHistory(),
@@ -15,6 +15,9 @@ const router = createRouter({
       path: '/',
       name: 'home',
       // alias: ['/alias', '/array'], // パラメーターは付与できない
+      meta: {
+        title: 'homeTitle',
+      },
       component: HomeView,
     },
     {
@@ -23,7 +26,7 @@ const router = createRouter({
       component: AboutView,
     },
     {
-      path: '/:id',
+      path: '/profile-:id',
       component: ProfileView,
       children: [
         {
@@ -51,6 +54,12 @@ const router = createRouter({
       path: '/blog/id-:id?',
       name: 'blog',
       component: BlogView,
+      // beforeEnter(to, from) { // パラメーターが変更された時は実行されない
+      //   return { name: 'home' }
+      // },
+      // meta: {
+      //   requireAuth: true,
+      // },
     },
     {
       path: '/:catchAll(.*)*',
@@ -61,7 +70,6 @@ const router = createRouter({
     },
   ],
   scrollBehavior(to, from, savedPosition) {
-    console.log(to, from, savedPosition)
     return new Promise((resolve) => {
       setTimeout(() => {
         const header = document.querySelector('.header')
@@ -87,5 +95,23 @@ const router = createRouter({
     })
   },
 })
+
+// router.beforeEach((to) => {
+//   if (to.name === 'blog') {
+//     return { name: 'home' }
+//   }
+//   if (!to.meta.requireAuth) {
+//     return { name: 'home' }
+//   }
+//   return true
+// })
+
+// router.beforeResolve((to, from) => { // ページの移動が終わる前
+//   console.log('beforeResolve', to, from)
+// })
+
+// router.afterEach((to, from) => { // ページの移動が終わった後に実行
+//   console.log('afterEach', to, from)
+// })
 
 export default router
