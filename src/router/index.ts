@@ -72,8 +72,9 @@ const router = createRouter({
   scrollBehavior(to, from, savedPosition) {
     return new Promise((resolve) => {
       setTimeout(() => {
-        const header = document.querySelector('.header')
-        const headerHeight = header ? header.clientHeight : 0
+        const headerHeight = getComputedStyle(document.documentElement)
+          .getPropertyValue('--HEADER-HEIGHT')
+          .trim()
 
         if (savedPosition) {
           return resolve(savedPosition)
@@ -82,7 +83,7 @@ const router = createRouter({
         if (to.hash) {
           return resolve({
             el: to.hash,
-            top: headerHeight,
+            top: headerHeight ? parseFloat(headerHeight) : 0,
             behavior: 'smooth',
           })
         }
