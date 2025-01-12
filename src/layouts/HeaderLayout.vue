@@ -5,13 +5,21 @@
   import SectionLayout from '@/layouts/SectionLayout.vue'
   import BaseLogo from '@/layouts/BaseLogo.vue'
   import HamburgerMenu from '@/layouts/HamburgerMenu.vue'
-  import GlobalNavigation from '@/layouts/GlobalNavigation.vue'
+  import GlobalNavigationPC from './GlobalNavigationPC.vue'
+  import GlobalNavigationSP from './GlobalNavigationSP.vue'
   import OverlayBase from '@/components/OverlayBase.vue'
 
   const isMenuOpen = ref(false)
   const menuId = 'MenuControl-1'
   const switchMenu = () => {
     isMenuOpen.value = !isMenuOpen.value
+    const { body } = document
+
+    if (isMenuOpen.value) {
+      body.classList.add('is-fixed')
+    } else {
+      body.classList.remove('is-fixed')
+    }
   }
   const router = useRouter()
   router.beforeEach(() => {
@@ -25,6 +33,34 @@
   }
 
   MQL.addEventListener('change', handleMediaQueryChange)
+
+  const beforeEnter = (el: Element) => {
+    const element = el as HTMLElement
+    element.style.height = '0'
+    element.style.display = 'block'
+  }
+
+  const enter = (el: Element) => {
+    const element = el as HTMLElement
+    element.style.height = `${element.scrollHeight}px`
+  }
+
+  const afterEnter = (el: Element) => {
+    const element = el as HTMLElement
+    element.style.height = 'auto'
+    element.style.display = 'block'
+    element.style.overflowY = 'auto'
+  }
+
+  const beforeLeave = (el: Element) => {
+    const element = el as HTMLElement
+    element.style.height = `${element.scrollHeight}px`
+  }
+
+  const leave = (el: Element) => {
+    const element = el as HTMLElement
+    element.style.height = '0'
+  }
 </script>
 
 <template>
@@ -38,8 +74,22 @@
           :is-active="isMenuOpen"
           @click="switchMenu"
         />
-        <GlobalNavigation v-if="MQL.matches" />
-        <GlobalNavigation v-else :id="menuId" :is-active="isMenuOpen" :inert="!isMenuOpen" />
+        <GlobalNavigationPC />
+        <Transition
+          name="slide"
+          @before-enter="beforeEnter"
+          @enter="enter"
+          @after-enter="afterEnter"
+          @before-leave="beforeLeave"
+          @leave="leave"
+        >
+          <GlobalNavigationSP
+            v-show="isMenuOpen"
+            :id="menuId"
+            :is-active="isMenuOpen"
+            :inert="!isMenuOpen"
+          />
+        </Transition>
       </div>
     </SectionLayout>
     <OverlayBase :is-active="isMenuOpen" @click="switchMenu" />
@@ -67,5 +117,16 @@
       align-items: center;
       gap: 24px;
     }
+  }
+
+  .slide-enter-active,
+  .slide-leave-active {
+    transition: height 0.3s ease-in-out;
+    overflow: hidden;
+  }
+
+  .slide-enter,
+  .slide-leave-to {
+    height: 0;
   }
 </style>
