@@ -7,12 +7,20 @@
 </script>
 
 <template>
-  <div>count: {{ counterStore.count }}</div>
-  <div>doubleCount: {{ counterStore.doubleCount }}</div>
+  <div class="root">
+    <div>count: {{ counterStore.count }}</div>
+    <div>doubleCount: {{ counterStore.doubleCount }}</div>
 
-  <ButtonLayout>
-    <ButtonLayoutItem>
-      <ButtonBase type="button" @click="counterStore.increment"> increment </ButtonBase>
-    </ButtonLayoutItem>
-  </ButtonLayout>
+    <ButtonLayout>
+      <ButtonLayoutItem>
+        <ButtonBase type="button" @click="counterStore.increment"> increment </ButtonBase>
+      </ButtonLayoutItem>
+    </ButtonLayout>
+  </div>
 </template>
+
+<style scoped lang="scss">
+  .root {
+    margin-top: 64px;
+  }
+</style>
