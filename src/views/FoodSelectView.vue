@@ -5,7 +5,7 @@
   import CardLayout from '@/components/CardLayout.vue'
   import CardItem from '@/components/CardItem.vue'
   import { foodData } from '@/data/foodData'
-  import TextBase from '@/components/TextBase.vue'
+  import TextLead from '@/components/TextLead.vue'
 
   const { foodDataRef, selectedFoodIndex, newFoodIndex, handleClickSelectedFood } =
     useFoodSelector(foodData)
@@ -15,9 +15,9 @@
   <SectionLayout>
     <HeadingLevel1>What are you having for dinner?</HeadingLevel1>
 
-    <TextBase v-show="newFoodIndex >= foodDataRef.length">
+    <TextLead v-show="newFoodIndex >= foodDataRef.length">
       The dinner you chose is {{ foodDataRef[selectedFoodIndex].name }}
-    </TextBase>
+    </TextLead>
 
     <CardLayout>
       <CardItem

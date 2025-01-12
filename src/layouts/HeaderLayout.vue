@@ -38,12 +38,7 @@
           :is-active="isMenuOpen"
           @click="switchMenu"
         />
-        <GlobalNavigation
-          v-if="MQL.matches"
-          :id="menuId"
-          :is-active="isMenuOpen"
-          :inert="!isMenuOpen"
-        />
+        <GlobalNavigation v-if="MQL.matches" />
         <GlobalNavigation v-else :id="menuId" :is-active="isMenuOpen" :inert="!isMenuOpen" />
       </div>
     </SectionLayout>

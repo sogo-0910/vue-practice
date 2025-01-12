@@ -60,6 +60,7 @@
     }
 
     &__link {
+      height: 100%;
       padding: 12px 24px;
       background: var(--COLOR-BACKGROUND-LIGHT);
       border: 2px solid var(--COLOR-PRIMARY);

@@ -2,7 +2,7 @@
   import { ref, watch } from 'vue'
 
   interface Props {
-    isActive: boolean
+    isActive?: boolean
   }
   const { isActive } = defineProps<Props>()
 
